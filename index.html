@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>dw-core – Technischer EL- & DWH-Stack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="dw-core ist ein konfigurationsgetriebener EL- & DWH-Stack für produktionsnahe Data-Warehouse-Projekte mit dbt-Integration." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <!-- Top-Navigation -->
+  <header class="border-b bg-white/80 backdrop-blur sticky top-0 z-20">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="font-semibold tracking-tight">
+        dw-core
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#architektur" class="hover:text-blue-700">Architektur</a>
+        <a href="#vorteile" class="hover:text-blue-700">Vorteile</a>
+        <a href="#zielgruppen" class="hover:text-blue-700">Für wen</a>
+        <a href="#features" class="hover:text-blue-700">Features</a>
+        <a href="#kontakt" class="hover:text-blue-700 font-medium">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="border-b">
+    <div class="max-w-5xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs font-semibold tracking-[0.2em] text-blue-700 uppercase mb-3">
+          Data-Warehouse Stack
+        </p>
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+          Technischer EL- &amp; DWH-Stack für produktionsnahe Data-Warehouse-Projekte.
+        </h1>
+        <p class="text-slate-700 mb-6">
+          dw-core standardisiert den Weg vom Quellsystem in die RAW-Schicht:
+          parallele und inkrementelle Loads, Data-Quality-Prüfungen,
+          Retention und dbt-Integration in einem konfigurationsgetriebenen Framework.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#features"
+             class="inline-flex items-center justify-center px-4 py-2 rounded-md bg-blue-700 text-white text-sm font-medium">
+            Funktionen ansehen
+          </a>
+          <a href="#kontakt"
+             class="inline-flex items-center justify-center px-4 py-2 rounded-md border border-slate-300 text-sm font-medium">
+            Kontakt / Demo anfragen
+          </a>
+        </div>
+      </div>
+      <div class="bg-white border rounded-xl p-4 shadow-sm text-sm">
+        <p class="font-mono text-xs text-slate-500 mb-2"># dw-core – Stack-Überblick</p>
+        <ul class="space-y-2 text-slate-800">
+          <li>• Extract/Load in Python (DB, REST, Dateien)</li>
+          <li>• RAW-Schicht im Warehouse inkl. DQ &amp; Retention</li>
+          <li>• Transform mit dbt (Staging, Core, Marts)</li>
+          <li>• Dev/Prod-Trennung &amp; Docker-Setup</li>
+          <li>• GUI für Settings, Backfill &amp; dbt-Assistent</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vorteile -->
+  <section id="vorteile" class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-semibold mb-6 tracking-tight">Warum ein standardisierter Stack?</h2>
+    <div class="grid md:grid-cols-2 gap-8 text-sm">
+      <div class="bg-white border rounded-xl p-5 shadow-sm">
+        <h3 class="font-semibold mb-3 text-slate-900">Ohne dw-core</h3>
+        <ul class="space-y-2 text-slate-700 list-disc list-inside">
+          <li>Fragile Einzelskripte ohne klare Struktur.</li>
+          <li>Jede neue Quelle ist ein eigenes Mini-Projekt.</li>
+          <li>Keine saubere Trennung zwischen RAW, Transform, Reporting.</li>
+          <li>Idempotenz, Retention und Data-Quality nur „irgendwie“ gelöst.</li>
+          <li>Wenig Wiederverwendung zwischen Projekten oder Kunden.</li>
+        </ul>
+      </div>
+      <div class="bg-blue-700 text-white rounded-xl p-5 shadow-sm">
+        <h3 class="font-semibold mb-3">Mit dw-core</h3>
+        <ul class="space-y-2 text-sm list-disc list-inside">
+          <li>Standardisierter Extract-&amp;-Load-Core für DB, REST &amp; Files.</li>
+          <li>RAW-Schicht mit Data-Quality-Prüfungen und Retention.</li>
+          <li>dbt-Projekt für Staging, Core und Marts direkt angebunden.</li>
+          <li>Konfiguration &amp; Steuerung über eine GUI statt versteckter Parameter.</li>
+          <li>Docker-Setup, Tests, Linting &amp; CI bereits vorbereitet.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zielgruppen -->
+  <section id="zielgruppen" class="max-w-5xl mx-auto px-4 py-16 border-t">
+    <h2 class="text-2xl font-semibold mb-6 tracking-tight">Für wen ist dw-core?</h2>
+    <div class="grid md:grid-cols-3 gap-6 text-sm">
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">IT / DWH-Engineers</h3>
+        <p class="text-slate-700 mb-2">
+          Standardisierte EL-Pipeline statt Einzelskripte, mit Logging,
+          Data-Quality, Retention und dbt-Integration.
+        </p>
+        <p class="text-slate-700">
+          Dev/Prod sauber getrennt, inklusive Docker-Setup und CI-Anbindung.
+        </p>
+      </div>
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Controller &amp; Fachbereiche</h3>
+        <p class="text-slate-700 mb-2">
+          Reproduzierbare Datenläufe, RAW-Schicht mit prüfbaren Regeln
+          und nachvollziehbarer Historie.
+        </p>
+        <p class="text-slate-700">
+          Stabilere Grundlage für Berichte und Management-Entscheidungen.
+        </p>
+      </div>
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Freelancer &amp; Beratungen</h3>
+        <p class="text-slate-700 mb-2">
+          Ein schlanker, technischer Stack für KMU-Projekte,
+          der sich in Projekten effizient einsetzen lässt.
+        </p>
+        <p class="text-slate-700">
+          Kürzere Projektanlaufzeiten und weniger Infrastruktur-Bastelei.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architektur -->
+  <section id="architektur" class="max-w-5xl mx-auto px-4 py-16 border-t">
+    <h2 class="text-2xl font-semibold mb-4 tracking-tight">Architekturüberblick</h2>
+    <p class="text-slate-700 text-sm mb-6">
+      dw-core bildet einen technischen EL- &amp; DWH-Stack:
+      Extract &amp; Load in Python, Warehouse auf Postgres, Transform mit dbt
+      und eine klare Trennung zwischen Dev und Prod.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6 text-sm mb-8">
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Extract / Load</h3>
+        <p class="text-slate-700 mb-2">
+          Python-basierter Runner für:
+        </p>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>Datenbanken</li>
+          <li>REST-APIs</li>
+          <li>Dateien</li>
+        </ul>
+        <p class="text-slate-700 mt-3">
+          Steuerlogik, Logging, Data-Quality-Prüfungen und Retention
+          sind im Framework vorgesehen.
+        </p>
+      </div>
+
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Warehouse &amp; RAW-Schicht</h3>
+        <p class="text-slate-700 mb-2">
+          Ziel ist ein Warehouse (z. B. Postgres) mit separatem RAW-Schema.
+        </p>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>Historisierung &amp; Retention pro Quelle</li>
+          <li>Technische Metadaten und Lauf-Informationen</li>
+          <li>Saubere Basis für dbt-Modelle</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Transform mit dbt</h3>
+        <p class="text-slate-700 mb-2">
+          Das mitgelieferte dbt-Projekt bildet:
+        </p>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>Quellen auf RAW</li>
+          <li>Staging-Modelle</li>
+          <li>optionale Core- und Mart-Modelle nach Domänen</li>
+        </ul>
+        <p class="text-slate-700 mt-3">
+          Nach einem erfolgreichen EL-Lauf kann ein
+          <span class="font-mono text-xs bg-slate-100 px-1 rounded">dbt build</span>
+          direkt angestoßen werden.
+        </p>
+      </div>
+
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Operations &amp; Umgebungen</h3>
+        <p class="text-slate-700 mb-2">
+          Dev- und Prod-Umgebungen werden über Konfiguration und Docker-Setup getrennt.
+        </p>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>Docker-Compose für Warehouse &amp; dbt-Laufzeit</li>
+          <li>Environment-Variablen für Verbindungen &amp; Optionen</li>
+          <li>Tests, Linting, Typprüfung &amp; CI vorbereitet</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="text-xs text-slate-500">
+      Details zur Architektur finden sich in der technischen Dokumentation im Projekt
+      (<span class="font-mono">/docs</span>).
+    </p>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="max-w-5xl mx-auto px-4 py-16 border-t">
+    <h2 class="text-2xl font-semibold mb-6 tracking-tight">Kernfunktionen</h2>
+    <div class="grid md:grid-cols-3 gap-6 text-sm">
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Extract &amp; Load</h3>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>Paralleler und inkrementeller Import aus Quellsystemen.</li>
+          <li>Unterstützung für Datenbanken, Dateien und REST.</li>
+          <li>Steuerung über Konfiguration und GUI.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Data-Quality &amp; RAW</h3>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>Data-Quality-Prüfungen pro Source.</li>
+          <li>Retention-Regeln im RAW-Schema.</li>
+          <li>Nachvollziehbare Lauf-Informationen.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">dbt &amp; Transform</h3>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>dbt-Projekt im Repo enthalten.</li>
+          <li>Generierung von Sources &amp; STG-Templates über die GUI.</li>
+          <li>Build des Warehouses nach erfolgreichem Run.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">GUI &amp; Steuerung</h3>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>Settings-Editor (Konfiguration im Projekt).</li>
+          <li>Environment-Editor für Verbindungen &amp; Optionen.</li>
+          <li>Gezielte Backfill-Läufe pro Source (GUI + CLI).</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Dev/Prod &amp; Infrastruktur</h3>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>Saubere Dev/Prod-Trennung.</li>
+          <li>Docker-Compose für Warehouse &amp; dbt.</li>
+          <li>Einfach in bestehende CI/CD-Pipelines integrierbar.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white border rounded-xl p-4 shadow-sm">
+        <h3 class="font-semibold mb-2">Qualität &amp; Wartbarkeit</h3>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>Tests, Linting und Typprüfung im Projekt angelegt.</li>
+          <li>Standardisierte Struktur für neue Quellen.</li>
+          <li>Robuste Basis für mehrere Kundenprojekte.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="border-t bg-slate-100">
+    <div class="max-w-5xl mx-auto px-4 py-10 text-sm">
+      <h2 class="text-xl font-semibold mb-3 tracking-tight">Kontakt</h2>
+      <p class="text-slate-700 mb-4">
+        Interesse an einem Projekt oder an einer Demo?
+      </p>
+      <p class="text-slate-800 mb-2">
+        E-Mail:
+        <a href="mailto:tobias.withalm@dw-core.de" class="text-blue-700 underline">
+          tobias.withalm@dw-core.de
+        </a>
+      </p>
+      <p class="text-slate-700">
+        Technische Details, Installationshinweise und Dokumentation
+        werden nach Kontaktaufnahme projektbezogen bereitgestellt.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t bg-slate-100">
+    <div class="max-w-5xl mx-auto px-4 py-4 text-xs text-slate-600 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      <p>© dw-core</p>
+      <nav class="flex flex-wrap gap-4">
+        <a href="impressum.html" class="hover:text-blue-700">Impressum</a>
+        <a href="datenschutz.html" class="hover:text-blue-700">Datenschutz</a>
+        <a href="cookies.html" class="hover:text-blue-700">Cookies</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
