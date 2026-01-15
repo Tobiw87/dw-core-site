@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Businessplan</title>
+
+  <!-- Optional: Wenn du schon ein CSS hast, hier einbinden -->
+  <!-- <link rel="stylesheet" href="/style.css"> -->
+
+  <!-- Markdown Renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    /* Minimal damit es nicht aussieht wie 1998 */
+    body { max-width: 980px; margin: 40px auto; padding: 0 16px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; }
+    pre { overflow: auto; padding: 12px; background: #f6f8fa; border-radius: 8px; }
+    code { background: #f6f8fa; padding: 2px 4px; border-radius: 4px; }
+    h1,h2,h3 { margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <main id="content">Lade Businessplan…</main>
+
+  <script>
+    // Pfad zur Markdown-Datei: anpassen, wenn du sie anders ablegst
+    const mdPath = "/docs/Businessplan.md";
+
+    fetch(mdPath, { cache: "no-store" })
+      .then(r => {
+        if (!r.ok) throw new Error("Kann Markdown nicht laden: " + r.status);
+        return r.text();
+      })
+      .then(md => {
+        document.getElementById("content").innerHTML = marked.parse(md);
+      })
+      .catch(err => {
+        document.getElementById("content").innerHTML =
+          "<h1>Fehler</h1><p>" + err.message + "</p>";
+      });
+  </script>
+</body>
+</html>
